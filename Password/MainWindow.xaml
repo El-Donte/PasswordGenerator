@@ -1,0 +1,40 @@
+﻿<Window x:Class="Password.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Password"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="480" ResizeMode="NoResize">
+    <StackPanel>
+        <DockPanel>
+            <Label Margin="10" Content="Пароль:" FontSize="16"/>
+            <TextBox x:Name="PasswordTextBox" Margin="10" Height ="25" IsReadOnly="True"/>
+        </DockPanel>
+
+        <DockPanel>
+            <Button x:Name="generateButton" Width="175" Height="25"  Margin="10" Content="Сгенерировать" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Click="generateButton_Click"/>
+            <Button x:Name="copyButton" Width="175" Height="25" Margin="10" Content="Скопировать" HorizontalAlignment="Right" FontSize="14" Click="copyButton_Click"/>
+        </DockPanel>
+        
+        <Border BorderBrush="LightGray" Margin="10" BorderThickness="2" Padding="10" CornerRadius="15" >
+            <StackPanel>
+                <DockPanel>
+                    <Label  Content="Длина пароля:" Margin="5" FontSize="16"/>
+                    <TextBox x:Name="lenghtTextBox" Height="25" Margin="10" VerticalAlignment="Bottom"/>
+                </DockPanel>
+
+                <Grid Height="30" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox x:Name="numbersCheckBox" Content="Цифры" FontSize="14"/>
+                    <CheckBox x:Name="lettersCheckBox" Grid.Row="0" Grid.Column="1" Content="Буквы" FontSize="14"/>
+                    <CheckBox x:Name="specialSymbolsCheckBox" Grid.Row="0" Grid.Column="2" Content="Спец символы" FontSize="14"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</Window>
